@@ -1699,7 +1699,7 @@ Example if :func:`~celery.execute.apply_async` has these arguments:
 
 .. code-block:: python
 
-   Task.apply_async(immediate=False, exchange='video',
+   task.apply_async(immediate=False, exchange='video',
                     routing_key='video.compress')
 
 and a router returns:
@@ -1712,7 +1712,7 @@ the final message options will be:
 
 .. code-block:: python
 
-    immediate=True, exchange='urgent', routing_key='video.compress'
+    immediate=False, exchange='urgent', routing_key='video.compress'
 
 (and any default message options defined in the
 :class:`~celery.task.base.Task` class)
